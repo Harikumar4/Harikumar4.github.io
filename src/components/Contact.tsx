@@ -31,8 +31,7 @@ const Contact = () => {
 
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "Email", value: "your.email@example.com", href: "mailto:your.email@example.com" },
-                { icon: Phone, label: "Phone", value: "+91 XXXXX XXXXX", href: "tel:+91XXXXXXXXX" },
+                { icon: Mail, label: "Email", value: "harikumar.st4@gmail.com", href: "mailto:harikumar.st4@gmail.com" },
                 { icon: MapPin, label: "Location", value: "Chennai, India", href: "#" }
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-center gap-4">
@@ -57,9 +56,9 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-primary mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, href: "#", label: "GitHub" },
-                  { icon: Linkedin, href: "#", label: "LinkedIn" },
-                  { icon: Mail, href: "#", label: "Email" }
+                  { icon: Github, href: "https://github.com/Harikumar4", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/hari-kumar4", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:harikumar.st4@gmail.com", label: "Email" }
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}

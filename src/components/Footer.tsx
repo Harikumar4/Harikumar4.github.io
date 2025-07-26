@@ -3,6 +3,13 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="py-12 px-4 border-t border-border bg-gradient-dark">
       <div className="container mx-auto max-w-6xl">
@@ -23,20 +30,21 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-primary">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { name: "About", href: "#about" },
+                { name: "About", href: "#hero" },
                 { name: "Experience", href: "#experience" },
                 { name: "Projects", href: "#projects" },
                 { name: "Skills", href: "#skills" },
                 { name: "Education", href: "#education" },
                 { name: "Contact", href: "#contact" }
               ].map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 bg-transparent border-none cursor-pointer"
+                  style={{ background: "none", border: "none", padding: 0 }}
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -45,15 +53,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-primary">Connect</h4>
             <div className="space-y-2">
-              <p className="text-muted-foreground">your.email@example.com</p>
+              <p className="text-muted-foreground">harikumar.st4@gmail.com</p>
               <p className="text-muted-foreground">Chennai, India</p>
             </div>
             
             <div className="flex gap-4 pt-2">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" }
+                { icon: Github, href: "https://github.com/Harikumar4", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/hari-kumar4", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:harikumar.st4@gmail.com", label: "Email" }
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -71,9 +79,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            <span>© {currentYear} Portfolio. Made with</span>
-            <Heart className="h-4 w-4 text-primary fill-current" />
-            <span>and lots of caffeine.</span>
+            <span>© {currentYear} Portfolio.</span>
+            
           </p>
         </div>
       </div>
