@@ -31,17 +31,20 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               className="border-primary/50 text-primary hover:bg-primary/10 hover:border-primary hover:shadow-neon transition-all duration-300"
+              asChild
             >
-              View Projects
+              <a href="https://github.com/Harikumar4" target="_blank" rel="noopener noreferrer">
+                View Projects
+              </a>
             </Button>
           </div>
 
           {/* Social Links */}
           <div className="flex justify-center space-x-6 pt-8">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "#", label: "Email" }
+              { icon: Github, href: "https://github.com/Harikumar4", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/hari-kumar4", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:harikumar.st4@gmail.com", label: "Email" }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
