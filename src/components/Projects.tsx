@@ -11,11 +11,11 @@ const projects = [
     description: "Built a web platform that supports text, PDF, audio, video, and image inputs for multi-modal retrieval-augmented generation.",
     features: [
       "Integrated LangChain, ChromaDB, and SentenceTransformers for chunking, embedding, and semantic search.",
-      "Implemented asynchronous processing to reduce data ingestion time by 40%."
+      "Implemented asynchronous processing to reduce data ingestion time."
     ],
     technologies: ["LangChain", "ChromaDB", "SentenceTransformers", "Multi-Modal AI", "RAG"],
     links: {
-      github: "#",
+      github: "https://github.com/Harikumar4/FusionFlow",
       demo: "#"
     }
   },
@@ -25,13 +25,13 @@ const projects = [
     date: "June 2025",
     description: "Developed LexiCrafter, an AI-powered platform that automates book creation using a modular, agent-based architecture built with LangGraph.",
     features: [
-      "Orchestrated 6+ specialized agents for tasks including outlining, writing, formatting, research, and exporting, accelerating book production by ~90%.",
+      "Orchestrated 6+ specialized agents for tasks including outlining, writing, formatting, research, and exporting, increasing book production efficiency.",
       "Designed and orchestrated specialized agents for tasks including outlining, chapter writing, formatting, and exporting to PDF/DOCX/audio formats.",
       "Developed a Research Agent that crawls top websites and stores key insights in a vector database for AI-assisted content generation."
     ],
     technologies: ["LangGraph", "Multi-Agent Systems", "Vector Database", "AI Automation", "NLP"],
     links: {
-      github: "#",
+      github: "https://github.com/Harikumar4/LexiCrafter",
       demo: "#"
     }
   },
@@ -47,7 +47,7 @@ const projects = [
     ],
     technologies: ["NLP", "Fine-tuning", "Legal AI", "Web Platform", "Case Matching"],
     links: {
-      github: "#",
+      github: "https://github.com/Harikumar4/CasePilot",
       demo: "#"
     }
   }
@@ -119,9 +119,12 @@ const Projects = () => {
                       size="sm" 
                       variant="outline"
                       className="border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 w-full"
+                      asChild
                     >
-                      <Github className="mr-2 h-4 w-4" />
-                      View Code
+                     <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        View Code
+                      </a>
                     </Button>
                   </div>
                 </div>
